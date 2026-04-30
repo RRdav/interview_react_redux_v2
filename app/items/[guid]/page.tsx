@@ -13,7 +13,7 @@ export default async function ItemPage({ params }: { params: Promise<{ guid: str
 
     const data = item.filter((item) => item.guid === guid);
 
-    // Fetch img
+    // Fetch img (image endpoint is empty)
     const imgRes = await fetch(`http://localhost:8081/items/${guid}`);
     const imgData = await imgRes.json();
 

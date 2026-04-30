@@ -10,7 +10,6 @@ export default function Home() {
   const dispatch =  useAppDispatch();
   const router = useRouter();
   const { data, status } = useAppSelector((state) => state.items);
-  console.log("Items state:", { data, status });
 
   useEffect(() => {
     if (status === "idle") {
