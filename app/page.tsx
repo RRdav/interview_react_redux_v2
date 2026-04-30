@@ -13,10 +13,10 @@ export default function Home() {
   console.log("Items state:", { data, status });
 
   useEffect(() => {
-    console.log("Dispatching fetchItems...");
-    dispatch(fetchItems());
-    console.log("Fetched items:", data);
-  }, [dispatch]);
+    if (status === "idle") {
+      dispatch(fetchItems());
+    }
+  }, [dispatch, status]);
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
